@@ -17,7 +17,7 @@ body {
 header {
     text-align: center;
     padding: 50px 20px 30px;
-    background-color: #0d6efd;
+    background-color: #b68c29;
     color: #fff;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
@@ -65,7 +65,7 @@ section:hover {
 
 section h2 {
     font-size: 2rem;
-    color: #0d6efd;
+    color: #789b40;
     margin-bottom: 15px;
     border-bottom: 2px solid #0d6efd;
     display: inline-block;
