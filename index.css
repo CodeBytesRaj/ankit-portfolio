@@ -1,138 +1,149 @@
-/* Reset some default styles */
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    background-color: #f4f6f8;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #eef2f7, #dfe9f3);
     color: #333;
-    padding: 0 20px;
 }
 
-/* Header and Navigation */
+/* HEADER */
 header {
     text-align: center;
-    padding: 50px 20px 30px;
-    background-color: #b68c29;
-    color: #fff;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    padding: 70px 20px 40px;
+    background: linear-gradient(120deg, #0d6efd, #3a86ff);
+    color: white;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    animation: fadeIn 1s ease-in-out;
 }
 
 header h1 {
-    font-size: 2.8rem;
-    margin-bottom: 10px;
+    font-size: 3rem;
+    font-weight: 600;
 }
 
 header p {
     font-size: 1.2rem;
-    margin-bottom: 20px;
+    margin-top: 8px;
+    opacity: 0.9;
+}
+
+/* NAVIGATION */
+nav {
+    margin-top: 20px;
 }
 
 nav a {
-    color: #fff;
     text-decoration: none;
-    margin: 0 12px;
+    color: white;
+    margin: 0 15px;
     font-weight: 500;
-    transition: color 0.3s, transform 0.2s;
+    position: relative;
+    transition: 0.3s;
 }
 
-nav a:hover {
-    color: #ffc107;
-    transform: scale(1.05);
+nav a::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #ffd60a;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
 }
 
-/* Section Cards */
+nav a:hover::after {
+    width: 100%;
+}
+
+/* SECTION CARDS */
 section {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 25px 30px;
-    background-color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    max-width: 950px;
+    margin: 50px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
     transition: transform 0.3s, box-shadow 0.3s;
+    animation: slideUp 0.8s ease forwards;
 }
 
 section:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
 }
 
 section h2 {
-    font-size: 2rem;
-    color: #789b40;
+    color: #0d6efd;
     margin-bottom: 15px;
-    border-bottom: 2px solid #0d6efd;
-    display: inline-block;
-    padding-bottom: 5px;
+    border-left: 5px solid #0d6efd;
+    padding-left: 10px;
 }
 
 section h3 {
-    font-size: 1.3rem;
+    margin-top: 15px;
     color: #333;
-    margin: 15px 0 5px;
-}
-
-section p, section li {
-    font-size: 1rem;
-    margin: 8px 0;
 }
 
 ul {
-    list-style-type: disc;
     margin-left: 20px;
 }
 
-/* Contact Section Styling */
+li {
+    margin: 8px 0;
+}
+
+/* CONTACT */
 #contact p {
     margin: 6px 0;
+    font-weight: 500;
 }
 
-/* Footer */
+/* FOOTER */
 footer {
     text-align: center;
-    padding: 25px 0;
-    background-color: #0d6efd;
-    color: #fff;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    box-shadow: 0 -4px 10px rgba(0,0,0,0.1);
-    font-size: 0.95rem;
+    padding: 25px;
+    background: linear-gradient(120deg, #0d6efd, #3a86ff);
+    color: white;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    margin-top: 60px;
 }
 
-/* Links inside sections */
-section a {
-    color: #0d6efd;
-    text-decoration: none;
-    transition: color 0.3s;
+/* ANIMATIONS */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-section a:hover {
-    color: #ffc107;
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-/* Responsive Design */
+/* RESPONSIVE */
 @media (max-width: 768px) {
     header h1 {
         font-size: 2rem;
     }
-
-    section h2 {
-        font-size: 1.5rem;
+    section {
+        margin: 30px 15px;
+        padding: 20px;
     }
-
     nav a {
         display: block;
-        margin: 5px 0;
-    }
-
-    section {
-        padding: 20px;
-        margin: 30px 10px;
+        margin: 8px 0;
     }
 }
+
